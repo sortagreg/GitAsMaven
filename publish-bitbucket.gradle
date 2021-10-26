@@ -57,15 +57,17 @@ task lookForArtifacts {
 
 uploadArchives {
 
-    repositories.mavenDeployer {
-        configuration = configurations.deployLibrary
-        repository(url: 'git:releases://git@bitbucket.org:' + COMPANY + '/' + REPOSITORY_NAME + '.git')
-        pom.project {
-            groupId = ARTIFACT_PACKAGE
-            version = ARTIFACT_VERSION
-            artifactId = ARTIFACT_NAME
-            packaging ARTIFACT_PACKAGING
-        }
+    repositories {
+        mavenDeployer {
+        	configuration = configurations.deployLibrary
+        	repository(url: 'git:releases://git@bitbucket.org:' + COMPANY + '/' + REPOSITORY_NAME + '.git')
+        	pom.project {
+          	  groupId = ARTIFACT_PACKAGE
+          	  version = ARTIFACT_VERSION
+          	  artifactId = ARTIFACT_NAME
+          	  packaging ARTIFACT_PACKAGING
+   	  }
+   	 }
     }
 }
 
