@@ -55,7 +55,7 @@ task lookForArtifacts {
     }
 }
 
-uploadArchives {
+project.uploadArchives {
 
     repositories {
         mavenDeployer {
