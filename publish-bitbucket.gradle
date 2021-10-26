@@ -55,7 +55,9 @@ task lookForArtifacts {
     }
 }
 
-project.uploadArchives {
+uploadArchives.dependsOn lookForArtifacts
+
+uploadArchives {
 
     repositories {
         mavenDeployer {
@@ -70,8 +72,6 @@ project.uploadArchives {
    	 }
     }
 }
-
-uploadArchives.dependsOn lookForArtifacts
 
 def urlExists(String repositoryUrl) {
 
